@@ -1,9 +1,5 @@
 package com.edu.umanizales.kids_list.model;
-
 import lombok.Data;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Data
 public class ListSE {
@@ -109,7 +105,7 @@ public class ListSE {
 
     public void deleteById(Kid kidid, String id_delete) {
         if (head == null) { //Si la cabeza esta vacia
-            System.out.println("No se pudo encontrar el niño, la lista esta vacia"); //Se imprime mensaje de error
+            System.out.println("No se encontró el niño, la lista está vacía"); //Se imprime mensaje de error
             return;
         }
 
@@ -244,11 +240,11 @@ public class ListSE {
                     case 'F':
                     case 'f':
                         listCp.addInPosition(temp.getData(), posG);
-                        posG = posG + 2;
+                        posG += 2;
                         break;
                     default:
                         listCp.addInPosition(temp.getData(), posB);
-                        posB = posB + 2;
+                        posB += 2;
                 }
                 temp = temp.getNext(); //Se pasa al siguiente
             }
@@ -259,12 +255,12 @@ public class ListSE {
 
     public void switchEnds () {
         if (head == null || head.getNext() == null) { //Si la cabeza esta vacia o tiene un solo niño
-            System.out.println("No se puede realizar el cambio. La lista esta vacia o solo hay un elemento");
+            System.out.println("La lista esta vacía o solo hay un elemento");
             return;
         }
-
         if (head.getNext().getNext() == null) { //Si la lista tiene dos nodos
             invert();
+            return;
         }
 
         //Si hay más de dos nodos
@@ -282,6 +278,6 @@ public class ListSE {
         head = current; //Ultimo nodo se convierte en la nueva cabeza
         first.setNext(null); //Primer nodo original se mueve al final de la lista
         previous.setNext(first); //Conectamos el penultimo nodo con el primer nodo original
-    }
+    } //Fin de
 
 } //Fin de la clase

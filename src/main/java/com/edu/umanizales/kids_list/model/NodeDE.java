@@ -1,15 +1,15 @@
 package com.edu.umanizales.kids_list.model;
-
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class Node {
+public class NodeDE {
     private Kid data;
-    private Node next;
+    private NodeDE next;
+    private NodeDE previous;
 
-    public Node(Kid data) {
+    public NodeDE(Kid data) {
         this.data = data;
     }
 } //Fin de la clase
